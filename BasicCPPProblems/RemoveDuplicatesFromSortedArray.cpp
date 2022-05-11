@@ -7,3 +7,16 @@
 // It does not matter what you leave beyond the first k elements.
 // Return k after placing the final result in the first k slots of nums.
 // Do not allocate extra space for another array. You must do this by modifying the input array in-place with O(1) extra memory.
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+        int i = 0;
+        for(int j=0;j<nums.size();j++){
+                if(nums[j] !=nums[i]){
+                    i++;
+                    nums[i]=nums[j];
+                }
+        }
+        return i+1;
+    }
+};
